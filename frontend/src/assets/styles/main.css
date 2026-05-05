@@ -1,0 +1,386 @@
+/* Importación de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@200;300;400;500;600;700;800&display=swap');
+@import "@/assets/styles/forms.css";
+
+:root {
+  --font-main: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  
+  font-family: var(--font-main);
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #FAFAF9;
+  color: #0F172A;
+  font-family: var(--font-main); /* Inter por defecto en toda la app */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =====================================================================
+   SISTEMA TIPOGRÁFICO GLOBAL UNIFICADO
+   Doctrina: Outfit (Marca/Títulos) | Inter (Datos/UI)
+   ===================================================================== */
+
+.text-title {
+  font-family: var(--font-display) !important;
+  font-size: 2.125rem !important; /* text-h4 */
+  font-weight: 700 !important;
+  line-height: 2.5rem !important;
+  color: #1E293B !important;
+  letter-spacing: -0.02em !important;
+}
+
+.text-primary {
+  font-family: var(--font-main) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #1E293B !important; /* Neutro / Alto contraste */
+  line-height: 1.4 !important;
+}
+
+.text-secondary {
+  font-family: var(--font-main) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #64748B !important; /* Bajo contraste */
+  line-height: 1.4 !important;
+}
+
+.text-label {
+  font-family: var(--font-main) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #94A3B8 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* --- Familia (resuelve el contrato Outfit/Inter) --- */
+.f-display, .f-page-title, .f-bento-value, .f-dialog-title,
+.f-section-title, .f-display-name {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.02em;
+}
+
+.f-technical, .btn-elite, .badge-fine,
+.f-card-title, .f-card-subtitle, .f-kpi-value, .f-stat-value,
+.f-label, .f-meta {
+  font-family: var(--font-main) !important;
+}
+
+/* --- Cifras alineables (KPIs, stats, tablas numéricas) --- */
+.f-tabular,
+.f-bento-value, .f-kpi-value, .f-stat-value {
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* --- Display (Outfit) --- */
+.f-section-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1E293B;
+}
+.f-display-name {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1E293B;
+  letter-spacing: -0.03em;
+}
+.f-bento-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1E293B;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.f-dialog-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1E293B;
+}
+
+/* --- Body (Inter) --- */
+.f-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1E293B;
+  letter-spacing: -0.01em;
+}
+.f-card-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+}
+.f-kpi-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1E293B;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.f-stat-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1;
+}
+.f-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.f-meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+/* CABECERAS GLOBALES ELITE */
+.view-header-elite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 64px;
+  width: 100%;
+}
+
+.f-page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* SISTEMA DE CABECERAS UNIFICADO */
+.f-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.f-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.f-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-area {
+  margin-bottom: 32px;
+}
+
+/* REGLA DE ORO: CONTENEDOR MAESTRO DE LAYOUT */
+.f-view-layout {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 960px) {
+  .f-view-layout {
+    padding: 16px;
+    gap: 16px;
+  }
+}
+
+/* =====================================================================
+   SISTEMA DE BOTONES ESTRATÉGICO (Basado en el Login)
+   ===================================================================== */
+.btn-f-base {
+  height: 38px !important;
+  font-family: var(--font-main) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+}
+
+/* SOLID (Como el Login) */
+.btn-f-solid {
+  background-color: rgb(var(--v-theme-primary)) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(var(--v-theme-primary), 0.2) !important;
+  padding: 0 24px !important;
+}
+
+.btn-f-solid:hover {
+  background-color: #1E3A8A !important;
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* OUTLINE (Alta Empleados en Dashboard) */
+.btn-f-outline {
+  background-color: transparent !important;
+  color: rgb(var(--v-theme-primary)) !important;
+  border: 1px solid rgb(var(--v-theme-primary)) !important;
+  padding: 0 24px !important;
+}
+
+.btn-f-outline:hover {
+  background: rgba(30, 64, 175, 0.05) !important;
+  transform: translateY(-2px);
+}
+
+/* TEXT (Todo el resto de la app) */
+.btn-f-text {
+  background: transparent !important;
+  color: rgb(var(--v-theme-primary)) !important;
+  border: none !important;
+  font-weight: 700 !important;
+  padding: 0 8px !important;
+  box-shadow: none !important;
+}
+
+.btn-f-text:hover {
+  opacity: 0.7;
+}
+
+/* UTILIDAD DE ANIMACIÓN (Manteniendo .f-page-view solo para efectos) */
+.f-page-view {
+  animation: elite-fade-in 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* PREVENCIÓN DE OVERFLOW GLOBAL EN TABLAS */
+.v-table__wrapper, .naked-list-container {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.animate-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: elite-fade-in 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+
+@keyframes elite-fade-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* UTILIDADES */
+.icon-xs { width: 14px; height: 14px; }
+.icon-sm { width: 18px; height: 18px; }
+.icon-md { width: 24px; height: 24px; }
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* VUETIFY OVERRIDES */
+.v-dialog .v-overlay__content { border-radius: 32px !important; }
+.fine-snackbar .v-snackbar__wrapper {
+  border-radius: 16px !important;
+  background: rgba(15, 23, 42, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- CARDS PREMIUM --- */
+.f-card {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  padding: 24px;
+}
+
+.f-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+
+.f-card-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: #0F172A;
+  letter-spacing: -0.02em;
+}
+
+.f-card-subtitle {
+  font-size: 12px;
+  color: #64748B;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* =====================================================================
+   SISTEMA DE IDENTIDAD ESTRATÉGICO (Paneles Laterales)
+   ===================================================================== */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.profile-aside {
+  position: sticky;
+  top: 20px;
+}
+
+.identity-block-minimal {
+  padding: 24px;
+  border-left: 3px solid #E2E8F0;
+  background: #F8FAFC;
+  border-radius: 0 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-minimal {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 1px solid #E2E8F0;
+}
+
+@media (max-width: 960px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
